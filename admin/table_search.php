@@ -169,7 +169,7 @@ if ($rType == "users") {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Habilitar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					}
 				}
@@ -324,7 +324,7 @@ if ($rType == "users") {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Habilitar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					}
 				}
@@ -467,7 +467,7 @@ if ($rType == "users") {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Habilitar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					}
 				}
@@ -2034,7 +2034,7 @@ if ($rType == "users") {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Habilitar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					}
 				}

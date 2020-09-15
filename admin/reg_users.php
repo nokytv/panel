@@ -59,7 +59,7 @@ if ($rSettings["sidebar"]) {
                                     </li>
                                 </ol>
                             </div>
-                            <h4 class="page-title"><?php if ($rPermissions["is_admin"]) { ?>Registered Users<?php } else { ?>Subresellers<?php } ?></h4>
+                            <h4 class="page-title"><?php if ($rPermissions["is_admin"]) { ?>Usuarios Registrados<?php } else { ?>Sub-revendedores<?php } ?></h4>
                         </div>
                     </div>
                 </div>     
@@ -73,12 +73,12 @@ if ($rSettings["sidebar"]) {
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" id="reg_search" value="" placeholder="Buscar usuarios ...">
                                         </div>
-                                        <label class="col-md-2 col-form-label text-center" for="reg_reseller">Filter Results</label>
+                                        <label class="col-md-2 col-form-label text-center" for="reg_reseller">Filtrar Resultados</label>
                                         <div class="col-md-3">
                                             <select id="reg_reseller" class="form-control" data-toggle="select2">
-                                                <option value="" selected>All Owners</option>
+                                                <option value="" selected>Todos los propietarios</option>
                                                 <?php if ($rPermissions["is_admin"]) { ?>
-                                                <option value="0">No Owner</option>
+                                                <option value="0">Sin dueño</option>
                                                 <?php } foreach ($rRegisteredUsers as $rRegisteredUser) { ?>
                                                 <option value="<?=$rRegisteredUser["id"]?>"><?=$rRegisteredUser["username"]?></option>
                                                 <?php } ?>
@@ -87,11 +87,11 @@ if ($rSettings["sidebar"]) {
                                         <div class="col-md-2">
                                             <select id="reg_filter" class="form-control" data-toggle="select2">
                                                 <option value="" selected>No Filter</option>
-                                                <option value="1">Active</option>
-                                                <option value="2">Disabled</option>
+                                                <option value="1">Activo</option>
+                                                <option value="2">Apagado</option>
                                             </select>
                                         </div>
-                                        <label class="col-md-1 col-form-label text-center" for="reg_show_entries">Show</label>
+                                        <label class="col-md-1 col-form-label text-center" for="reg_show_entries">mostrar</label>
                                         <div class="col-md-1">
                                             <select id="reg_show_entries" class="form-control" data-toggle="select2">
                                                 <?php foreach (Array(10, 25, 50, 250, 500, 1000) as $rShow) { ?>
@@ -108,12 +108,12 @@ if ($rSettings["sidebar"]) {
                                             <th>Username</th>
                                             <th>Owner</th>
                                             <th class="text-center">IP</th>
-                                            <th class="text-center">Type</th>
-                                            <th class="text-center">Status</th>
-                                            <th class="text-center">Credits</th>
-                                            <th class="text-center">Users</th>
-                                            <th class="text-center">Last Login</th>
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">Tipo</th>
+                                            <th class="text-center">Estado</th>
+                                            <th class="text-center">Créditos</th>
+                                            <th class="text-center">Usuarios</th>
+                                            <th class="text-center">Último acceso</th>
+                                            <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -167,29 +167,29 @@ if ($rSettings["sidebar"]) {
             }
             $.getJSON("./api.php?action=reg_user&sub=" + rType + "&user_id=" + rID, function(data) {
                 if (data.result === true) {
-                    if (rType == "delete") {
-                        $.toast("User has been deleted.");
-                    } else if (rType == "enable") {
-                        $.toast("User has been enabled.");
-                    } else if (rType == "disable") {
-                        $.toast("User has been disabled.");
+                    if (rType == "Eliminar") {
+                        $.toast("El usuario ha sido eliminado.");
+                    } else if (rType == "habilitar") {
+                        $.toast("El usuario ha sido habilitado.");
+                    } else if (rType == "inhabilitar") {
+                        $.toast("El usuario ha sido deshabilitado.");
 					} else if (rType == "reset") {
-                        $.toast("Two factor authentication has been reset for this user.");
+                        $.toast("Se ha restablecido la autenticación de dos factores para este usuario.");
                     }
                     $('[data-toggle="tooltip"]').tooltip("hide");
                     $("#datatable-users").DataTable().ajax.reload(null, false);
                 } else {
-                    $.toast("An error occured while processing your request.");
+                    $.toast("Ocurrió un error al procesar su solicitud.");
                 }
             });
         }
         function toggleAuto() {
             if (autoRefresh == true) {
                 autoRefresh = false;
-                $(".auto-text").html("Manual Mode");
+                $(".auto-text").html("Modo manual");
             } else {
                 autoRefresh = true;
-                $(".auto-text").html("Auto-Refresh");
+                $(".auto-text").html("Autorefrescar");
             }
         }
         function getFilter() {

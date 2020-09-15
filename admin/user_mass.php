@@ -113,7 +113,7 @@ if ($rSettings["sidebar"]) {
                                     <a href="./users.php"><li class="breadcrumb-item"><i class="mdi mdi-backspace"></i> Back to Users</li></a>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Mass Edit Users <small id="selected_count"></small></h4>
+                            <h4 class="page-title">edición masiva<small id="selected_count"></small></h4>
                         </div>
                     </div>
                 </div>     
@@ -125,14 +125,14 @@ if ($rSettings["sidebar"]) {
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            Mass edit of users was successfully executed!
+                            La edición masiva de usuarios se ejecutó con éxito.
                         </div>
                         <?php } else if ((isset($_STATUS)) && ($_STATUS > 0)) { ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            There was an error performing this operation! Please check the form entry and try again.
+                            ¡Hubo un error al realizar esta operación! Compruebe la entrada del formulario e inténtelo de nuevo.
                         </div>
                         <?php } ?>
                         <div class="card">
@@ -145,19 +145,19 @@ if ($rSettings["sidebar"]) {
                                             <li class="nav-item">
                                                 <a href="#user-selection" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2"> 
                                                     <i class="mdi mdi-account-group mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Users</span>
+                                                    <span class="d-none d-sm-inline">Usuarios</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#user-details" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2"> 
                                                     <i class="mdi mdi-account-card-details-outline mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Details</span>
+                                                    <span class="d-none d-sm-inline">Detalles</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#bouquets" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2">
                                                     <i class="mdi mdi-flower-tulip mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Bouquets</span>
+                                                    <span class="d-none d-sm-inline">Paquetes</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -169,7 +169,7 @@ if ($rSettings["sidebar"]) {
                                                     </div>
                                                     <div class="col-md-4">
                                                         <select id="reseller_search" class="form-control" data-toggle="select2">
-                                                            <option value="" selected>All Resellers</option>
+                                                            <option value="" selected>Todos los revendedores</option>
                                                             <?php foreach (getRegisteredUsers() as $rRegisteredUser) { ?>
                                                             <option value="<?=$rRegisteredUser["id"]?>"><?=$rRegisteredUser["username"]?></option>
                                                             <?php } ?>
@@ -177,14 +177,14 @@ if ($rSettings["sidebar"]) {
                                                     </div>
                                                     <div class="col-md-2">
                                                         <select id="filter" class="form-control" data-toggle="select2">
-                                                            <option value="" selected>No Filter</option>
-                                                            <option value="1">Active</option>
-                                                            <option value="2">Disabled</option>
-                                                            <option value="3">Banned</option>
-                                                            <option value="4">Expired</option>
-                                                            <option value="5">Trial</option>
-															<option value="6">MAG Device</option>
-															<option value="7">Enigma Device</option>
+                                                            <option value="" selected>Sin filtro</option>
+                                                            <option value="1">Activo</option>
+                                                            <option value="2">Discapacitado</option>
+                                                            <option value="3">Prohibido</option>
+                                                            <option value="4">Caducado</option>
+                                                            <option value="5">Juicio</option>
+															<option value="6">Dispositivo MAG</option>
+															<option value="7">Dispositivo Enigma</option>
                                                         </select>
                                                     </div>
                                                     <div class="col-md-2 col-8">
@@ -203,15 +203,15 @@ if ($rSettings["sidebar"]) {
                                                         <thead class="bg-light">
                                                             <tr>
                                                                 <th class="text-center">ID</th>
-                                                                <th>Username</th>
+                                                                <th>Nombre de usuario</th>
                                                                 <th></th>
-                                                                <th>Reseller</th>
-                                                                <th class="text-center">Status</th>
+                                                                <th>Revendedor</th>
+                                                                <th class="text-center">Estado</th>
                                                                 <th class="text-center">Online</th>
-                                                                <th class="text-center">Trial</th>
-                                                                <th class="text-center">Expiration</th>
+                                                                <th class="text-center">Prueba</th>
+                                                                <th class="text-center">Vencimiento</th>
                                                                 <th></th>
-                                                                <th class="text-center">Conns.</th>
+                                                                <th class="text-center">Cons.</th>
                                                                 <th></th>
                                                                 <th></th>
                                                             </tr>
@@ -224,14 +224,14 @@ if ($rSettings["sidebar"]) {
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <p class="sub-header">
-                                                            To mass edit any of the below options, tick the checkbox next to it and change the input value.
+                                                            Para editar en masa cualquiera de las siguientes opciones, marque la casilla de verificación junto a ella y cambie el valor de entrada.
                                                         </p>
                                                         <div class="form-group row mb-4">
                                                             <div class="checkbox checkbox-single col-md-1 checkbox-offset checkbox-primary">
                                                                 <input type="checkbox" class="activate" data-name="member_id" name="c_member_id">
                                                                 <label></label>
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="member_id">Owner</label>
+                                                            <label class="col-md-3 col-form-label" for="member_id">Propietario</label>
                                                             <div class="col-md-8">
                                                                 <select disabled name="member_id" id="member_id" class="form-control select2" data-toggle="select2">
                                                                     <?php foreach (getRegisteredUsers() as $rRegisteredUser) { ?>
@@ -245,18 +245,18 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="checkbox" class="activate" data-name="max_connections" name="c_max_connections">
                                                                 <label></label>
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="max_connections">Max Connections</label>
+                                                            <label class="col-md-3 col-form-label" for="max_connections">Conexiones máximas</label>
                                                             <div class="col-md-2">
                                                                 <input disabled type="text" class="form-control" id="max_connections" name="max_connections" value="1">
                                                             </div>
-                                                            <label class="col-md-2 col-form-label" for="exp_date">Expiry Date</label>
+                                                            <label class="col-md-2 col-form-label" for="exp_date">Fecha de caducidad</label>
                                                             <div class="col-md-2">
                                                                 <input disabled type="text" disabled class="form-control text-center date" id="exp_date" name="exp_date" value="" data-toggle="date-picker" data-single-date-picker="true">
                                                             </div>
                                                             <div class="col-md-1">
                                                                 <div class="custom-control custom-checkbox mt-1">
                                                                     <input disabled type="checkbox" class="custom-control-input" id="no_expire" name="no_expire">
-                                                                    <label class="custom-control-label" for="no_expire">Never</label>
+                                                                    <label class="custom-control-label" for="no_expire">Nunca</label>
                                                                 </div>
                                                             </div>
                                                             <div class="checkbox checkbox-single col-md-1 checkbox-offset checkbox-primary">
@@ -269,7 +269,7 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="checkbox" class="activate" data-name="admin_notes" name="c_admin_notes">
                                                                 <label></label>
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="admin_notes">Admin Notes</label>
+                                                            <label class="col-md-3 col-form-label" for="admin_notes">Notas de administrador</label>
                                                             <div class="col-md-8">
                                                                 <textarea disabled id="admin_notes" name="admin_notes" class="form-control" rows="3" placeholder=""></textarea>
                                                             </div>
@@ -279,7 +279,7 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="checkbox" class="activate" data-name="reseller_notes" name="c_reseller_notes">
                                                                 <label></label>
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="reseller_notes">Reseller Notes</label>
+                                                            <label class="col-md-3 col-form-label" for="reseller_notes">Notas del distribuidor</label>
                                                             <div class="col-md-8">
                                                                 <textarea disabled id="reseller_notes" name="reseller_notes" class="form-control" rows="3" placeholder=""></textarea>
                                                             </div>
@@ -289,10 +289,10 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="checkbox" class="activate" data-name="force_server_id" name="c_force_server_id">
                                                                 <label></label>
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="force_server_id">Forced Connection</label>
+                                                            <label class="col-md-3 col-form-label" for="force_server_id">Conexión forzada</label>
                                                             <div class="col-md-8">
                                                                 <select disabled name="force_server_id" id="force_server_id" class="form-control select2" data-toggle="select2">
-                                                                    <option selected value="0">Disabled</option>
+                                                                    <option selected value="0">Apagado</option>
                                                                     <?php foreach ($rServers as $rServer) { ?>
                                                                     <option value="<?=$rServer["id"]?>"><?=$rServer["server_name"]?></option>
                                                                     <?php } ?>
@@ -355,11 +355,11 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="checkbox" class="activate" data-name="is_trial" data-type="switch" name="c_is_trial">
                                                                 <label></label>
                                                             </div>
-                                                            <label class="col-md-3 col-form-label" for="is_trial">Trial Account</label>
+                                                            <label class="col-md-3 col-form-label" for="is_trial">Cuenta de prueba</label>
                                                             <div class="col-md-2">
                                                                 <input disabled name="is_trial" id="is_trial" type="checkbox" data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
-                                                            <label class="col-md-2 col-form-label" for="access_output">Access Output</label>
+                                                            <label class="col-md-2 col-form-label" for="access_output">Salida de acceso</label>
                                                             <div class="col-md-3">
                                                                 <?php foreach (getOutputs() as $rOutput) { ?>
                                                                 <div class="checkbox form-check-inline">
@@ -391,10 +391,10 @@ if ($rSettings["sidebar"]) {
                                                 </div> <!-- end row -->
                                                 <ul class="list-inline wizard mb-0">
                                                     <li class="previous list-inline-item">
-                                                        <a href="javascript: void(0);" class="btn btn-secondary">Previous</a>
+                                                        <a href="javascript: void(0);" class="btn btn-secondary">Anterior</a>
                                                     </li>
                                                     <li class="next list-inline-item float-right">
-                                                        <a href="javascript: void(0);" class="btn btn-secondary">Next</a>
+                                                        <a href="javascript: void(0);" class="btn btn-secondary">próximo</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -406,7 +406,7 @@ if ($rSettings["sidebar"]) {
                                                                 <thead class="bg-light">
                                                                     <tr>
                                                                         <th class="text-center">ID</th>
-                                                                        <th>Bouquet Name</th>
+                                                                        <th>Paquete</th>
                                                                         <th class="text-center">Streams</th>
                                                                         <th class="text-center">Series</th>
                                                                     </tr>
@@ -424,17 +424,17 @@ if ($rSettings["sidebar"]) {
                                                             </table>
                                                             <div class="custom-control col-md-12 custom-checkbox text-center" style="margin-top:20px;">
                                                                 <input type="checkbox" class="custom-control-input" id="c_bouquets" data-name="bouquets" data-type="bouquet" name="c_bouquets">
-                                                                <label class="custom-control-label" for="c_bouquets">Tick this box to apply the above bouquets to all selected users. Selecting none will remove bouquets from users.</label>
+                                                                <label class="custom-control-label" for="c_bouquets">Marque esta casilla para aplicar los ramos anteriores a todos los usuarios seleccionados. Si selecciona ninguno, se eliminarán los ramos de flores de los usuarios.</label>
                                                             </div>
                                                         </div>
                                                     </div> <!-- end col -->
                                                 </div> <!-- end row -->
                                                 <ul class="list-inline wizard mb-0">
                                                     <li class="previous list-inline-item">
-                                                        <a href="javascript: void(0);" class="btn btn-secondary">Previous</a>
+                                                        <a href="javascript: void(0);" class="btn btn-secondary">Anterior</a>
                                                     </li>
                                                     <li class="next list-inline-item float-right">
-                                                        <a href="javascript: void(0);" onClick="toggleBouquets()" class="btn btn-info">Toggle Bouquets</a>
+                                                        <a href="javascript: void(0);" onClick="toggleBouquets()" class="btn btn-info">Alternar Paquetes</a>
                                                         <input name="submit_user" type="submit" class="btn btn-primary" value="Mass Edit" />
                                                     </li>
                                                 </ul>

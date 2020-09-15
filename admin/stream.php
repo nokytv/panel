@@ -407,7 +407,7 @@ if ($rSettings["sidebar"]) {
                                     </li>
                                 </ol>
                             </div>
-                            <h4 class="page-title"><?php if (isset($rStream["id"])) { echo $rStream["stream_display_name"].' &nbsp;<button type="button" class="btn btn-outline-info waves-effect waves-light btn-xs" onClick="player('.$rStream["id"].');"><i class="mdi mdi-play"></i></button>'; } else if (isset($_GET["import"])) { echo "Import Streams"; } else { echo "Add Stream"; } ?></h4>
+                            <h4 class="page-title"><?php if (isset($rStream["id"])) { echo $rStream["stream_display_name"].' &nbsp;<button type="button" class="btn btn-outline-info waves-effect waves-light btn-xs" onClick="player('.$rStream["id"].');"><i class="mdi mdi-play"></i></button>'; } else if (isset($_GET["import"])) { echo "Import Streams"; } else { echo "Agregar canal"; } ?></h4>
                         </div>
                     </div>
                 </div>     

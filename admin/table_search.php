@@ -159,14 +159,14 @@ if ($rType == "users") {
 				}
                 if (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_user"))) {
                     if ($rRow["admin_enabled"]) {
-                        $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Ban" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'ban\');"><i class="mdi mdi-power"></i></button>';
+                        $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Bloquear" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'ban\');"><i class="mdi mdi-power"></i></button>';
                     } else {
                         $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Unban" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'unban\');"><i class="mdi mdi-power"></i></button>';
                     }
                 }
 				if (($rPermissions["is_reseller"]) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_user")))) {
 					if ($rRow["enabled"]) {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Disable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
@@ -174,7 +174,7 @@ if ($rType == "users") {
 					}
 				}
                 if ((($rPermissions["is_reseller"]) && ($rPermissions["delete_users"])) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_user")))) {
-                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
                 }
                 $rButtons .= '</div>';
                 if ($rRow["last_active"]) {
@@ -312,7 +312,7 @@ if ($rType == "users") {
                 }
                 if (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_mag"))) {
 					if ($rRow["admin_enabled"]) {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Ban" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'ban\');"><i class="mdi mdi-power"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Bloquear" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'ban\');"><i class="mdi mdi-power"></i></button>
 						';
 					} else {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Unban" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'unban\');"><i class="mdi mdi-power"></i></button>
@@ -321,7 +321,7 @@ if ($rType == "users") {
                 }
 				if (($rPermissions["is_reseller"]) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_mag")))) {
 					if ($rRow["enabled"] == 1) {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Disable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
@@ -329,7 +329,7 @@ if ($rType == "users") {
 					}
 				}
                 if ((($rPermissions["is_reseller"]) && ($rPermissions["delete_users"])) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_mag")))) {
-                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
                 }
                 $rButtons .= '</div>';
                 $rReturn["data"][] = Array($rRow["id"], $rRow["username"], base64_decode($rRow["mac"]), $rRow["owner_name"], $rStatus, $rActive, $rTrial, $rExpDate, $rButtons);
@@ -457,14 +457,14 @@ if ($rType == "users") {
                 }
                 if (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_e2"))) {
                     if ($rRow["admin_enabled"]) {
-                        $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Ban" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'ban\');"><i class="mdi mdi-power"></i></button>';
+                        $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Bloquear" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'ban\');"><i class="mdi mdi-power"></i></button>';
                     } else {
                         $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Unban" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'unban\');"><i class="mdi mdi-power"></i></button>';
                     }
                 }
 				if (($rPermissions["is_reseller"]) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_e2")))) {
 					if ($rRow["enabled"]) {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Disable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
@@ -472,7 +472,7 @@ if ($rType == "users") {
 					}
 				}
 				if ((($rPermissions["is_reseller"]) && ($rPermissions["delete_users"])) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_e2")))) {
-                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
                 }
                 $rButtons .= '</div>';
                 $rReturn["data"][] = Array($rRow["id"], $rRow["username"], $rRow["mac"], $rRow["owner_name"], $rStatus, $rActive, $rTrial, $rExpDate, $rButtons);
@@ -647,7 +647,7 @@ if ($rType == "users") {
 						$rButtons .= '<a href="./stream.php?id='.$rRow["id"].'"><button data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-pencil-outline"></i></button></a>
 						';
 					}
-					$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>
+					$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>
 					';
 				}
                 $rButtons .= '</div>';
@@ -881,7 +881,7 @@ if ($rType == "users") {
 						$rButtons .= '<a href="./radio.php?id='.$rRow["id"].'"><button data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-pencil-outline"></i></button></a>
 						';
 					}
-					$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>
+					$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>
 					';
 				}
                 $rButtons .= '</div>';
@@ -1058,7 +1058,7 @@ if ($rType == "users") {
 						';
 					}
 					$rButtons .= '<a href="./movie.php?id='.$rRow["id"].'"><button data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-pencil-outline"></i></button></a>
-					<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+					<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
 				}
                 $rButtons .= '</div>';
 				if (hasPermissions("adv", "player")) {
@@ -2031,7 +2031,7 @@ if ($rType == "users") {
                 }
 				if (($rPermissions["is_reseller"]) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_reguser")))) {
 					if ($rRow["status"] == 1) {
-						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Disable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
+						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Apagar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'disable\');"><i class="mdi mdi-lock"></i></button>
 						';
 					} else {
 						$rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Enable" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'enable\');"><i class="mdi mdi-lock"></i></button>
@@ -2039,7 +2039,7 @@ if ($rType == "users") {
 					}
 				}
                 if ((($rPermissions["is_reseller"]) && ($rPermissions["delete_users"])) OR (($rPermissions["is_admin"]) && (hasPermissions("adv", "edit_reguser")))) {
-                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+                    $rButtons .= '<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
                 }
                 $rButtons .= '</div>';
                 $rReturn["data"][] = Array($rRow["id"], $rRow["username"], $rRow["owner_username"], $rRow["ip"], $rRow["group_name"], $rStatus, $rRow["credits"], $rRow["user_count"], $rRow["last_login"], $rButtons);
@@ -2103,7 +2103,7 @@ if ($rType == "users") {
 				if (hasPermissions("adv", "edit_series")) {
 					$rButtons .= '<a href="./series_order.php?id='.$rRow["id"].'"><button data-toggle="tooltip" data-placement="top" title="" data-original-title="Reorder Episodes" type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-format-line-spacing"></i></button></a>
 					<a href="./serie.php?id='.$rRow["id"].'"><button data-toggle="tooltip" data-placement="top" title="" data-original-title="Editar" type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-pencil-outline"></i></button></a>
-					<button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+					<button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
 				}
                 $rButtons .= '</div>';
                 if (!$rRow["latest_season"]) {
@@ -2243,7 +2243,7 @@ if ($rType == "users") {
 						';
 					}
 					$rButtons .= '<a href="./episode.php?id='.$rRow["id"].'&sid='.$rRow["sid"].'"><button data-toggle="tooltip" data-placement="top" title="" data-original-title="Edit" type="button" class="btn btn-light waves-effect waves-light btn-xs"><i class="mdi mdi-pencil-outline"></i></button></a>
-					<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+					<button data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" type="button" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', '.$rRow["server_id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
 				}
                 $rButtons .= '</div>';
 				if (hasPermissions("adv", "player")) {
@@ -2297,7 +2297,7 @@ if ($rType == "users") {
 	$rReturn = Array("draw" => $_GET["draw"], "recordsTotal" => count($rBackups), "recordsFiltered" => count($rBackups), "data" => Array());
 	foreach ($rBackups as $rBackup) {
 		$rButtons = '<div class="btn-group"><button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Restore Backup" class="btn btn-light waves-effect waves-light btn-xs" onClick="api(\''.$rBackup["filename"].'\', \'restore\');"><i class="mdi mdi-folder-upload"></i></button>
-		<button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete Backup" class="btn btn-light waves-effect waves-light btn-xs" onClick="api(\''.$rBackup["filename"].'\', \'delete\');"><i class="mdi mdi-close"></i></button></div>';
+		<button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar copia de seguridad" class="btn btn-light waves-effect waves-light btn-xs" onClick="api(\''.$rBackup["filename"].'\', \'delete\');"><i class="mdi mdi-close"></i></button></div>';
 		$rReturn["data"][] = Array($rBackup["date"], $rBackup["filename"], ceil($rBackup["filesize"]/1024/1024)." MB", $rButtons);
 	}
 	echo json_encode($rReturn);exit;
@@ -2364,7 +2364,7 @@ if ($rType == "users") {
 						}
                     }
                 }
-                $rButtons .= '<button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Delete" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
+                $rButtons .= '<button type="button" data-toggle="tooltip" data-placement="top" title="" data-original-title="Eliminar" class="btn btn-light waves-effect waves-light btn-xs" onClick="api('.$rRow["id"].', \'delete\');"><i class="mdi mdi-close"></i></button>';
                 $rButtons .= '</div>';
                 $rReturn["data"][] = Array($rRow["id"], Array(1 => "Movies", 2 => "Series")[$rRow["type"]], $rRow["server_name"], $rRow["filename"], $rWatchStatusArray[$rRow["status"]], $rRow["dateadded"], $rButtons);
             }

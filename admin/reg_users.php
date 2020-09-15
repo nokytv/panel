@@ -52,7 +52,7 @@ if ($rSettings["sidebar"]) {
 										if ((hasPermissions("adv", "add_reguser")) OR ($rPermissions["is_reseller"])) { ?>
                                         <a href="<?php if ($rPermissions["is_admin"]) { echo "reg_user"; } else { echo "subreseller"; } ?>.php">
                                             <button type="button" class="btn btn-success waves-effect waves-light btn-sm">
-                                                <i class="mdi mdi-plus"></i> Add <?php if ($rPermissions["is_admin"]) { ?>Registered User<?php } else { ?>Subreseller<?php } ?>
+                                                <i class="mdi mdi-plus"></i> Añadir <?php if ($rPermissions["is_admin"]) { ?>usuario registrado<?php } else { ?>Subvendedor<?php } ?>
                                             </button>
                                         </a>
 										<?php } ?>

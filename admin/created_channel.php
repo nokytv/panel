@@ -333,7 +333,7 @@ if ($rSettings["sidebar"]) {
                                                             <label class="col-md-4 col-form-label" for="series_no">24/7 Series</label>
                                                             <div class="col-md-8">
                                                                 <select name="series_no" id="series_no" class="form-control select2" data-toggle="select2">
-                                                                    <option value="0">Select a series...</option>
+                                                                    <option value="0">Seleccione una serie ...</option>
                                                                     <?php foreach (getSeries() as $rSeries) { ?>
                                                                     <option <?php if (isset($rChannel)) { if (intval($rChannel["series_no"]) == intval($rSeries["id"])) { echo "selected "; } } ?>value="<?=$rSeries["id"]?>"><?=$rSeries["title"]?></option>
                                                                     <?php } ?>

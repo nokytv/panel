@@ -105,8 +105,8 @@ if ($rSettings["sidebar"]) {
                                     <thead>
                                         <tr>
                                             <th class="text-center">ID</th>
-                                            <th>Username</th>
-                                            <th>Owner</th>
+                                            <th>Usuario</th>
+                                            <th>Propietario</th>
                                             <th class="text-center">IP</th>
                                             <th class="text-center">Tipo</th>
                                             <th class="text-center">Estado</th>

@@ -102,10 +102,10 @@ if ($rSettings["sidebar"]) {
                         <div class="page-title-box">
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <a href="./reg_users.php"><li class="breadcrumb-item"><i class="mdi mdi-backspace"></i> Back to Registered Users</li></a>
+                                    <a href="./reg_users.php"><li class="breadcrumb-item"><i class="mdi mdi-backspace"></i> Volver a Usuarios registrados</li></a>
                                 </ol>
                             </div>
-                            <h4 class="page-title"><?php if (isset($rUser)) { echo "Edit"; } else { echo "Add"; } ?> Registered User</h4>
+                            <h4 class="page-title"><?php if (isset($rUser)) { echo "Edit"; } else { echo "Add"; } ?> usuarios registrados</h4>
                         </div>
                     </div>
                 </div>     
@@ -117,21 +117,21 @@ if ($rSettings["sidebar"]) {
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            User operation was completed successfully.
+                            La operación del usuario se completó con éxito.
                         </div>
                         <?php } else if ((isset($_STATUS)) && ($_STATUS == 1)) { ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            Please enter a username, password and email address for this user.
+                            Introduzca un nombre de usuario, contraseña y dirección de correo electrónico para este usuario.
                         </div>
                         <?php } else if ((isset($_STATUS)) && ($_STATUS == 2)) { ?>
                         <div class="alert alert-danger alert-dismissible fade show" role="alert">
                             <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                 <span aria-hidden="true">&times;</span>
                             </button>
-                            There was an error performing this operation! Please check the form entry and try again.
+                            ¡Hubo un error al realizar esta operación! Compruebe la entrada del formulario e inténtelo de nuevo.
                         </div>
                         <?php } ?>
                         <div class="card">
@@ -146,13 +146,13 @@ if ($rSettings["sidebar"]) {
                                             <li class="nav-item">
                                                 <a href="#user-details" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2"> 
                                                     <i class="mdi mdi-account-card-details-outline mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Details</span>
+                                                    <span class="d-none d-sm-inline">Detalles</span>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="#package-override" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2"> 
                                                     <i class="mdi mdi-package mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Package Override</span>
+                                                    <span class="d-none d-sm-inline">Anulación de paquete</span>
                                                 </a>
                                             </li>
                                         </ul>
@@ -161,25 +161,25 @@ if ($rSettings["sidebar"]) {
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="username">Username</label>
+                                                            <label class="col-md-4 col-form-label" for="username">Usuario</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="username" name="username" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["username"]); } ?>" required data-parsley-trigger="change">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="password"><?php if (isset($rUser)) { ?>Change <?php } ?>Password</label>
+                                                            <label class="col-md-4 col-form-label" for="password"><?php if (isset($rUser)) { ?>Change <?php } ?>Contraseña</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="password" name="password" <?php if (!isset($rUser)) { echo 'value="'.generateString(10).'" required data-parsley-trigger="change"'; } else { echo 'value=""'; } ?>>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="email">Email Address</label>
+                                                            <label class="col-md-4 col-form-label" for="email">Email</label>
                                                             <div class="col-md-8">
                                                                 <input type="email" id="email" class="form-control" name="email" required value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["email"]); } ?>" required data-parsley-trigger="change">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="member_group_id">Member Group</label>
+                                                            <label class="col-md-4 col-form-label" for="member_group_id">Grupo de miembros</label>
                                                             <div class="col-md-8">
                                                                 <select name="member_group_id" id="member_group_id" class="form-control select2" data-toggle="select2">
                                                                     <?php foreach (getMemberGroups() as $rGroup) { ?>
@@ -189,7 +189,7 @@ if ($rSettings["sidebar"]) {
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="owner_id">Owner</label>
+                                                            <label class="col-md-4 col-form-label" for="owner_id">Propietario</label>
                                                             <div class="col-md-8">
                                                                 <select name="owner_id" id="owner_id" class="form-control select2" data-toggle="select2">
                                                                     <option value="0">No Owner</option>
@@ -200,29 +200,29 @@ if ($rSettings["sidebar"]) {
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="verified">Verified</label>
+                                                            <label class="col-md-4 col-form-label" for="verified">Verificado</label>
                                                             <div class="col-md-2">
                                                                 <input name="verified" id="verified" type="checkbox"<?php if ((isset($rUser)) && ($rUser["verified"] == 1)) { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
-                                                            <label class="col-md-4 col-form-label" for="credits">Credits</label>
+                                                            <label class="col-md-4 col-form-label" for="credits">Créditos</label>
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control text-center" id="credits" onkeypress="return isNumberKey(event)" name="credits" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["credits"]); } else { echo "0"; } ?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4" style="display: none;" id="credits_reason_div">
-                                                            <label class="col-md-4 col-form-label" for="credits_reason">Reason for Credits Adjustment</label>
+                                                            <label class="col-md-4 col-form-label" for="credits_reason">Motivo del ajuste de créditos</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="credits_reason" name="credits_reason" value="">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="reseller_dns">Reseller DNS</label>
+                                                            <label class="col-md-4 col-form-label" for="reseller_dns">DNS de revendedor</label>
                                                             <div class="col-md-8">
                                                                 <input type="text" class="form-control" id="reseller_dns" name="reseller_dns" value="<?php if (isset($rUser)) { echo htmlspecialchars($rUser["reseller_dns"]); } ?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="notes">Notes</label>
+                                                            <label class="col-md-4 col-form-label" for="notes">Notas</label>
                                                             <div class="col-md-8">
                                                                 <textarea id="notes" name="notes" class="form-control" rows="3" placeholder=""><?php if (isset($rUser)) { echo htmlspecialchars($rUser["notes"]); } ?></textarea>
                                                             </div>
@@ -239,15 +239,15 @@ if ($rSettings["sidebar"]) {
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <p class="sub-header">
-                                                            Leave the override cell blank to disable package override for the selected package.
+                                                            Deje la celda de anulación en blanco para deshabilitar la anulación de paquete para el paquete seleccionado.
                                                         </p>
                                                         <table class="table table-centered mb-0">
                                                             <thead>
                                                                 <tr>
                                                                     <th class="text-center">#</th>
-                                                                    <th>Package</th>
-                                                                    <th class="text-center">Credits</th>
-                                                                    <th class="text-center">Override</th>
+                                                                    <th>Paquete</th>
+                                                                    <th class="text-center">Créditos</th>
+                                                                    <th class="text-center">Anular</th>
                                                                 </tr>
                                                             </thead>
                                                             <tbody>

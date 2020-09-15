@@ -610,17 +610,17 @@ if ($rSettings["sidebar"]) {
                                                 <div class="row">
                                                     <div class="col-12">
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="gen_timestamps">Generar PTS<i data-toggle="tooltip" data-placement="top" title="" data-original-title="Allow FFmpeg to generate presentation timestamps for you to achieve better synchronization with the stream codecs. In some streams this can cause de-sync." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="gen_timestamps">Generar PTS<i data-toggle="tooltip" data-placement="top" title="" data-original-title="Permita que FFmpeg genere marcas de tiempo de presentación para que usted logre una mejor sincronización con los códecs de transmisión. En algunas transmisiones, esto puede causar desincronización." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input name="gen_timestamps" id="gen_timestamps" type="checkbox" <?php if (isset($rStream)) { if ($rStream["gen_timestamps"] == 1) { echo "checked "; } } else { echo "checked "; } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
-                                                            <label class="col-md-4 col-form-label" for="read_native">Marcos nativos<i data-toggle="tooltip" data-placement="top" title="" data-original-title="You should always read live streams as non-native frames. However if you are streaming static video files, set this to true otherwise the encoding process will fail." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="read_native">Marcos nativos<i data-toggle="tooltip" data-placement="top" title="" data-original-title="Siempre debe leer las transmisiones en vivo como marcos no nativos. Sin embargo, si está transmitiendo archivos de video estáticos, establezca esto en verdadero; de lo contrario, el proceso de codificación fallará." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input name="read_native" id="read_native" type="checkbox" <?php if (isset($rStream)) { if ($rStream["read_native"] == 1) { echo "checked "; } } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="stream_all">Transmitir todos los códecs<i data-toggle="tooltip" data-placement="top" title="" data-original-title="This option will stream all codecs from your stream. Some streams have more than one audio/video/subtitles channels." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="stream_all">Transmitir todos los códecs<i data-toggle="tooltip" data-placement="top" title="" data-original-title="Esta opción transmitirá todos los códecs de su transmisión. Algunas transmisiones tienen más de un canal de audio / video / subtítulos." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input name="stream_all" id="stream_all" type="checkbox" <?php if (isset($rStream)) { if ($rStream["stream_all"] == 1) { echo "checked "; } } ?>data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
                                                             </div>
@@ -644,17 +644,17 @@ if ($rSettings["sidebar"]) {
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control" id="custom_sid" name="custom_sid" value="<?php if (isset($rStream)) { echo htmlspecialchars($rStream["custom_sid"]); } ?>">
                                                             </div>
-                                                            <label class="col-md-4 col-form-label" for="delay_minutes">Retraso de un minuto <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Delay stream by X minutes. Will not work with on demand streams." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="delay_minutes">Retraso de un minuto <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Retrasa la transmisión X minutos. No funcionará con transmisiones bajo demanda." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control" id="delay_minutes" name="delay_minutes" value="<?php if (isset($rStream)) { echo $rStream["delay_minutes"]; } else { echo "0"; } ?>">
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="custom_ffmpeg">Comando FFmpeg personalizado <i data-toggle="tooltip" data-placement="top" title="" data-original-title="In this field you can write your own custom FFmpeg command. Please note that this command will be placed after the input and before the output. If the command you will specify here is about to do changes in the output video or audio, it may require to transcode the stream. In this case, you have to use and change at least the Video/Audio Codecs using the transcoding attributes below. The custom FFmpeg command will only be used by the server(s) that take the stream from the Source." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="custom_ffmpeg">Comando FFmpeg personalizado <i data-toggle="tooltip" data-placement="top" title="" data-original-title="En este campo puede escribir su propio comando FFmpeg personalizado. Tenga en cuenta que este comando se colocará después de la entrada y antes de la salida. Si el comando que especificará aquí está a punto de realizar cambios en el video o audio de salida, es posible que deba transcodificar la transmisión. En este caso, debe usar y cambiar al menos los códecs de video / audio utilizando los atributos de transcodificación a continuación. El comando personalizado FFmpeg solo será utilizado por los servidores que toman la transmisión de la fuente." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control" id="custom_ffmpeg" name="custom_ffmpeg" value="<?php if (isset($rStream)) { echo htmlspecialchars($rStream["custom_ffmpeg"]); } ?>">
                                                             </div>
-                                                            <label class="col-md-4 col-form-label" for="probesize_ondemand">Tamaño de la sonda bajo demanda <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Adjustable probesize for ondemand streams. Adjust this setting if you experience issues with no audio." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="probesize_ondemand">Tamaño de la sonda bajo demanda <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Tamaño de sonda ajustable para transmisiones bajo demanda. Ajusta esta configuración si experimentas problemas sin audio." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-2">
                                                                 <input type="text" class="form-control" id="probesize_ondemand" name="probesize_ondemand" value="<?php if (isset($rStream)) { echo $rStream["probesize_ondemand"]; } else { echo "128000"; } ?>">
                                                             </div>
@@ -684,10 +684,10 @@ if ($rSettings["sidebar"]) {
                                                             </div>
                                                         </div>
                                                         <div class="form-group row mb-4">
-                                                            <label class="col-md-4 col-form-label" for="transcode_profile_id">Perfil de transcodificación <i data-toggle="tooltip" data-placement="top" title="" data-original-title="Sometimes, in order to make a stream compatible with most devices, it must be transcoded. Please note that the transcode will only be applied to the server(s) that take the stream directly from the source, all other servers attached to the transcoding server will not transcode the stream." class="mdi mdi-information"></i></label>
+                                                            <label class="col-md-4 col-form-label" for="transcode_profile_id">Perfil de transcodificación <i data-toggle="tooltip" data-placement="top" title="" data-original-title="A veces, para que una transmisión sea compatible con la mayoría de los dispositivos, se debe transcodificar. Tenga en cuenta que la transcodificación solo se aplicará a los servidores que toman la transmisión directamente de la fuente, todos los demás servidores conectados al servidor de transcodificación no transcodificarán la transmisión." class="mdi mdi-information"></i></label>
                                                             <div class="col-md-8">
                                                                 <select name="transcode_profile_id" id="transcode_profile_id" class="form-control" data-toggle="select2">
-                                                                    <option <?php if (isset($rStream)) { if (intval($rStream["transcode_profile_id"]) == 0) { echo "selected "; } } ?>value="0">Transcoding Disabled</option>
+                                                                    <option <?php if (isset($rStream)) { if (intval($rStream["transcode_profile_id"]) == 0) { echo "selected "; } } ?>value="0">Transcodificación deshabilitada</option>
                                                                     <?php foreach ($rTranscodeProfiles as $rProfile) { ?>
                                                                     <option <?php if (isset($rStream)) { if (intval($rStream["transcode_profile_id"]) == intval($rProfile["profile_id"])) { echo "selected "; } } ?>value="<?=$rProfile["profile_id"]?>"><?=$rProfile["profile_name"]?></option>
                                                                     <?php } ?>
@@ -874,7 +874,7 @@ if ($rSettings["sidebar"]) {
                                                                 <input type="text" class="form-control" id="tv_archive_duration" name="tv_archive_duration" value="<?php if (isset($rStream)) { echo $rStream["tv_archive_duration"]; } else { echo "0"; } ?>">
                                                                 </select>
                                                             </div>
-															<label class="col-md-4 col-form-label" for="restart_on_edit"><?php if (isset($rStream["id"])) { ?>Restart on Edit<?php } else { ?>Start Stream Now<?php } ?></label>
+															<label class="col-md-4 col-form-label" for="restart_on_edit"><?php if (isset($rStream["id"])) { ?>Restart on Edit<?php } else { ?>Iniciar transmisión ahora<?php } ?></label>
 															<div class="col-md-2">
 																<input name="restart_on_edit" id="restart_on_edit" type="checkbox" data-plugin="switchery" class="js-switch" data-color="#039cfd"/>
 															</div>
@@ -992,7 +992,7 @@ if ($rSettings["sidebar"]) {
         }
         function addStream() {
             $(".stream-url:first").clone().appendTo(".streams");
-            $(".stream-url:last label").html("Stream URL");
+            $(".stream-url:last label").html("URL del Canal");
             $(".stream-url:last input").val("");
         }
         function removeStream(rField) {
@@ -1118,7 +1118,7 @@ if ($rSettings["sidebar"]) {
             $("#load_maps").click(function() {
                 rURL = $("#stream_source:eq(0)").val();
                 if (rURL.length > 0) {
-                    $.toast("Stream map has started, this can take a while depending on how many streams are present.");
+                    $.toast("El mapa de transmisiones ha comenzado, esto puede llevar un tiempo dependiendo de cuántas transmisiones estén presentes.");
                     $("#datatable-map").DataTable().clear().draw();
                     $.getJSON("./api.php?action=map_stream&stream=" + encodeURIComponent(rURL), function(data) {
                         $(data.streams).each(function(id, array) {
@@ -1184,12 +1184,12 @@ if ($rSettings["sidebar"]) {
                         });
                         $("#datatable-map").DataTable().draw();
                         if (data.streams.length > 0) {
-                            $.toast("Stream map complete. Please select relevant streams from the table.");
+                            $.toast("Mapa de transmisión completo. Seleccione las transmisiones relevantes de la tabla.");
                         } else {
-                            $.toast("Stream mapping didn't return any information.");
+                            $.toast("El mapeo de transmisiones no arrojó ninguna información.");
                         }
                     }).fail(function() {
-                        $.toast("An error occured while mapping streams.");
+                        $.toast("Ocurrió un error al mapear transmisiones.");
                     });
                 }
             });
@@ -1198,7 +1198,7 @@ if ($rSettings["sidebar"]) {
                 <?php if (!isset($_GET["import"])) { ?>
                 if ($("#stream_display_name").val().length == 0) {
                     e.preventDefault();
-                    $.toast("Enter a stream name.");
+                    $.toast("Ingresa un nombre de transmisión.");
                 }
                 <?php } else { ?>
                 if ($("#m3u_file").val().length == 0) {

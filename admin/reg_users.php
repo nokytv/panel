@@ -160,8 +160,8 @@ if ($rSettings["sidebar"]) {
         var rClearing = false;
         
         function api(rID, rType) {
-            if (rType == "delete") {
-                if (confirm('Are you sure you want to delete this registered user?') == false) {
+            if (rType == "Eliminar") {
+                if (confirm('¿Está seguro de que desea eliminar este usuario registrado?') == false) {
                     return;
                 }
             }
@@ -173,7 +173,7 @@ if ($rSettings["sidebar"]) {
                         $.toast("El usuario ha sido habilitado.");
                     } else if (rType == "inhabilitar") {
                         $.toast("El usuario ha sido deshabilitado.");
-					} else if (rType == "reset") {
+					} else if (rType == "Reiniciar") {
                         $.toast("Se ha restablecido la autenticación de dos factores para este usuario.");
                     }
                     $('[data-toggle="tooltip"]').tooltip("hide");

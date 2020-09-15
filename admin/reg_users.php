@@ -39,7 +39,7 @@ if ($rSettings["sidebar"]) {
                                         <?php if (!$detect->isMobile()) { ?>
                                         <a href="#" onClick="toggleAuto();">
                                             <button type="button" class="btn btn-dark waves-effect waves-light btn-sm">
-                                                <i class="mdi mdi-refresh"></i> <span class="auto-text">Auto-Refresh</span>
+                                                <i class="mdi mdi-refresh"></i> <span class="auto-text">Autorefrescar</span>
                                             </button>
                                         </a>
                                         <?php } else { ?>
@@ -300,7 +300,7 @@ if ($rSettings["sidebar"]) {
             <?php if (!$detect->isMobile()) { ?>
             setTimeout(reloadUsers, 5000);
             <?php }
-            if (!$rAdminSettings["auto_refresh"]) { ?>
+            if (!$rAdminSettings["autorefrescar"]) { ?>
             toggleAuto();
             <?php } ?>
             if ($('#reg_search').val().length > 0) {

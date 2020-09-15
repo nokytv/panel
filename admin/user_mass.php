@@ -110,7 +110,7 @@ if ($rSettings["sidebar"]) {
                         <div class="page-title-box">
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
-                                    <a href="./users.php"><li class="breadcrumb-item"><i class="mdi mdi-backspace"></i> Back to Users</li></a>
+                                    <a href="./users.php"><li class="breadcrumb-item"><i class="mdi mdi-backspace"></i>Volver a Usuarios</li></a>
                                 </ol>
                             </div>
                             <h4 class="page-title">edición masiva<small id="selected_count"></small></h4>

@@ -165,7 +165,7 @@ if ($rSettings["sidebar"]) {
                                             <div class="tab-pane" id="user-selection">
                                                 <div class="row">
                                                     <div class="col-md-3 col-6">
-                                                        <input type="text" class="form-control" id="user_search" value="" placeholder="Search Users...">
+                                                        <input type="text" class="form-control" id="user_search" value="" placeholder="Buscar usuarios ...">
                                                     </div>
                                                     <div class="col-md-4">
                                                         <select id="reseller_search" class="form-control" data-toggle="select2">

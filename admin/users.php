@@ -70,7 +70,7 @@ if ($rSettings["sidebar"]) {
                                 <form id="users_search">
                                     <div class="form-group row mb-4">
                                         <div class="col-md-3">
-                                            <input type="text" class="form-control" id="user_search" value="" placeholder="Search Users...">
+                                            <input type="text" class="form-control" id="user_search" value="" placeholder="Buscar usuarios ...">
                                         </div>
                                         <label class="col-md-2 col-form-label text-center" for="user_reseller">Filtrar Resultados</label>
                                         <div class="col-md-3">

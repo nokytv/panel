@@ -38,27 +38,27 @@ if ($rSettings["sidebar"]) {
                                         <?php if (!$detect->isMobile()) { ?>
                                         <a href="#" onClick="toggleAuto();">
                                             <button type="button" class="btn btn-dark waves-effect waves-light btn-sm">
-                                                <i class="mdi mdi-refresh"></i> <span class="auto-text">Auto-Refresh</span>
+                                                <i class="mdi mdi-refresh"></i> <span class="auto-text">Auto-Recargar</span>
                                             </button>
                                         </a>
                                         <?php } else { ?>
                                         <a href="javascript:location.reload();" onClick="toggleAuto();">
                                             <button type="button" class="btn btn-dark waves-effect waves-light btn-sm">
-                                                <i class="mdi mdi-refresh"></i> Refresh
+                                                <i class="mdi mdi-refresh"></i> Refrescar
                                             </button>
                                         </a>
                                         <?php }
 										if ((hasPermissions("adv", "add_user")) OR ($rPermissions["is_reseller"])) { ?>
                                         <a href="user<?php if ($rPermissions["is_reseller"]) { echo "_reseller"; } ?>.php">
                                             <button type="button" class="btn btn-success waves-effect waves-light btn-sm">
-                                                <i class="mdi mdi-plus"></i> Add User
+                                                <i class="mdi mdi-plus"></i> Añadir Cliente
                                             </button>
                                         </a>
 										<?php } ?>
                                     </li>
                                 </ol>
                             </div>
-                            <h4 class="page-title">Users</h4>
+                            <h4 class="page-title">Clientes</h4>
                         </div>
                     </div>
                 </div>
@@ -72,10 +72,10 @@ if ($rSettings["sidebar"]) {
                                         <div class="col-md-3">
                                             <input type="text" class="form-control" id="user_search" value="" placeholder="Search Users...">
                                         </div>
-                                        <label class="col-md-2 col-form-label text-center" for="user_reseller">Filter Results</label>
+                                        <label class="col-md-2 col-form-label text-center" for="user_reseller">Filtrar Resultados</label>
                                         <div class="col-md-3">
                                             <select id="user_reseller" class="form-control" data-toggle="select2">
-                                                <option value="" selected>All Resellers</option>
+                                                <option value="" selected>Todos los revendedores</option>
                                                 <?php foreach ($rRegisteredUsers as $rRegisteredUser) { ?>
                                                 <option value="<?=$rRegisteredUser["id"]?>"><?=$rRegisteredUser["username"]?></option>
                                                 <?php } ?>
@@ -83,15 +83,15 @@ if ($rSettings["sidebar"]) {
                                         </div>
                                         <div class="col-md-2">
                                             <select id="user_filter" class="form-control" data-toggle="select2">
-                                                <option value="" selected>No Filter</option>
-                                                <option value="1">Active</option>
-                                                <option value="2">Disabled</option>
-                                                <option value="3">Banned</option>
-                                                <option value="4">Expired</option>
-                                                <option value="5">Trial</option>
+                                                <option value="" selected>Filtro Apagado</option>
+                                                <option value="1">Activo</option>
+                                                <option value="2">Apagado</option>
+                                                <option value="3">Bloqueado</option>
+                                                <option value="4">Expirado</option>
+                                                <option value="5">Prueba</option>
                                             </select>
                                         </div>
-                                        <label class="col-md-1 col-form-label text-center" for="user_show_entries">Show</label>
+                                        <label class="col-md-1 col-form-label text-center" for="user_show_entries">Mostrar</label>
                                         <div class="col-md-1">
                                             <select id="user_show_entries" class="form-control" data-toggle="select2">
                                                 <?php foreach (Array(10, 25, 50, 250, 500, 1000) as $rShow) { ?>
@@ -105,17 +105,17 @@ if ($rSettings["sidebar"]) {
                                     <thead>
                                         <tr>
                                             <th class="text-center">ID</th>
-                                            <th>Username</th>
-                                            <th>Password</th>
-                                            <th>Reseller</th>
-                                            <th class="text-center">Status</th>
+                                            <th>Usuario</th>
+                                            <th>Contraseña</th>
+                                            <th>Revendedor</th>
+                                            <th class="text-center">Estado</th>
                                             <th class="text-center">Online</th>
-                                            <th class="text-center">Trial</th>
-                                            <th class="text-center">Expiration</th>
-                                            <th class="text-center">Active</th>
-                                            <th class="text-center">Conns.</th>
-                                            <th class="text-center">Last Connection</th>
-                                            <th class="text-center">Actions</th>
+                                            <th class="text-center">Prueba</th>
+                                            <th class="text-center">Expiración</th>
+                                            <th class="text-center">Activo</th>
+                                            <th class="text-center">Cons.</th>
+                                            <th class="text-center">Última conexión</th>
+                                            <th class="text-center">Acciones</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
@@ -131,13 +131,13 @@ if ($rSettings["sidebar"]) {
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="downloadModal">Download Playlist</h4>
+                            <h4 class="modal-title" id="downloadModal">Descargar lista reproducción</h4>
                             <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
                             <div class="col-12">
                                 <select id="download_type" class="form-control" data-toggle="select2">
-                                    <option value="">Select an ouput format: </option>
+                                    <option value="">Seleccione un formato de salida: </option>
                                     <?php
                                     $result = $db->query("SELECT * FROM `devices` ORDER BY `device_id` ASC;");
                                     if (($result) && ($result->num_rows > 0)) {

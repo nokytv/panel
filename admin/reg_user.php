@@ -152,7 +152,7 @@ if ($rSettings["sidebar"]) {
                                             <li class="nav-item">
                                                 <a href="#package-override" data-toggle="tab" class="nav-link rounded-0 pt-2 pb-2"> 
                                                     <i class="mdi mdi-package mr-1"></i>
-                                                    <span class="d-none d-sm-inline">Anulación de paquete</span>
+                                                    <span class="d-none d-sm-inline">Ajuste de paquete</span>
                                                 </a>
                                             </li>
                                         </ul>
